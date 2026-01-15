@@ -1,0 +1,29 @@
+
+{
+  "metadata": {
+    "title": "MediCareBD - AI-Powered Healthcare Management Platform",
+    "description": "Bangladesh's first AI-powered clinic management software. Complete digital transformation for medical practices with patient management, billing, inventory, and AI analytics.",
+    "keywords": "clinic software, hospital management, medical software Bangladesh, EHR, EMR, healthcare management, medical billing",
+    "ogTitle": "MediCareBD - Revolutionizing Healthcare in Bangladesh",
+    "ogDescription": "Complete digital transformation for medical practices with AI-powered tools.",
+    "twitterTitle": "MediCareBD - AI-Powered Healthcare Platform",
+    "twitterDescription": "Transform your medical practice with AI-powered management tools"
+  },
+  "navigation": {
+    "features": "Features",
+    "ai": "AI Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "demo": "Free Demo",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Complete Digital Transformation",
+    "title2": "for Your Medical Practice",
+    "subtitle": "Bangladesh's first AI-powered clinic management software. Everything from patient management to AI analytics in one platform.",
+    "ctaPrimary": "Get Free Demo",
+    "ctaSecondary": "View All Features",
+    "trustBadge": "Trusted by 500+ Doctors in Bangladesh"
+  }
+}

@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Lead {
+  id               Int      @id @default(autoincrement())
+  name             String
+  role             String?
+  company          String?
+  organizationSize String?
+  message          String?
+  phone            String   @unique
+  email            String?  @unique
+  status           String   @default("NEW")
+  source           String?
+  sessionId        String?
+  landingPage      String?
+  screenSize       String?
+  utmSource        String?
+  utmMedium        String?
+  utmCampaign      String?
+  ipAddress        String?
+  userAgent        String?
+  referrer         String?
+  metadata         Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
