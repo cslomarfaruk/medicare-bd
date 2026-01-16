@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "preseed": "prisma generate && tsc --outDir dist/seed prisma/seed.ts",
     "seed": "node dist/seed/prisma/seed.js",
     "prisma:generate": "prisma generate",

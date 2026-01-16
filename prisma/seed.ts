@@ -10,10 +10,10 @@ const adapter = new PrismaPg({
 const prisma = new PrismaClient({ adapter })
 
 async function main() {
-  const adminPassword = await hash('admin123', 10)
+  const adminPassword = await hash('admin', 10)
 
   await prisma.user.upsert({
-    where: { email: 'admin@medico.ai.app' },
+    where: { email: 'admin@email.com' },
     update: {},
     create: {
       email: 'admin@medico.ai.app',
