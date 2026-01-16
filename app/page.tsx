@@ -1,5 +1,5 @@
 // app/page.tsx – root landing page (English by default)
-import HomePage from './(site)/page'
+import HomePage from '@/components/pages/home-page'
 import SiteShell from '@/components/layouts/site-shell'
 
 export default function RootPage() {
