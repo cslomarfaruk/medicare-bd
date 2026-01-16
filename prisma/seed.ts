@@ -16,7 +16,7 @@ async function main() {
     where: { email: 'admin@email.com' },
     update: {},
     create: {
-      email: 'admin@medico.ai.app',
+      email: 'admin@email.com',
       name: 'Admin User',
       password: adminPassword,
       role: 'ADMIN',
