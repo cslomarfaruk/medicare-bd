@@ -13,8 +13,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     const ref = searchParams.get('ref') || searchParams.get('id')
     if (ref) {
       try {
-        localStorage.setItem('medico_ref', ref)
-        document.cookie = `medico_ref=${ref}; path=/; max-age=31536000`
+        localStorage.setItem('Managemed_ref', ref)
+        document.cookie = `Managemed_ref=${ref}; path=/; max-age=31536000`
       } catch {
         // ignore storage issues
       }

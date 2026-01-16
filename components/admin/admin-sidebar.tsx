@@ -55,7 +55,7 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
           <Link href="/internal-dashboard" className="flex items-center gap-2">
             <Shield className="h-7 w-7 text-cyan-400" />
             <span className="text-lg font-bold">
-              medico<span className="text-cyan-400">BD</span>
+              Managemed<span className="text-cyan-400">BD</span>
             </span>
           </Link>
           <button onClick={onClose} className="lg:hidden">

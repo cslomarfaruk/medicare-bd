@@ -2,7 +2,7 @@
 import HomePage from '@/components/pages/home-page'
 
 export const metadata = {
-  title: 'medico.ai - AI-Powered Healthcare Management Platform',
+  title: 'Managemed - AI-Powered Healthcare Management Platform',
   description: 'Bangladesh\'s first AI-powered clinic management software.',
 }
 

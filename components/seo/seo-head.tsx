@@ -19,11 +19,11 @@ export default function SEOHead({
   description,
   keywords = 'clinic software, hospital management, medical software Bangladesh, EHR, EMR, healthcare management',
   ogImage = '/og-image.png',
-  canonicalUrl = 'https://medico.ai.com',
+  canonicalUrl = 'https://Managemed.com',
   locale = 'en',
   alternateUrls,
 }: SEOHeadProps) {
-  const siteUrl = 'https://medico.ai.com'
+  const siteUrl = 'https://Managemed.com'
   const fullCanonicalUrl = `${siteUrl}${canonicalUrl}`
   
   return (
@@ -35,7 +35,7 @@ export default function SEOHead({
       <meta name="keywords" content={keywords} />
       <meta name="robots" content="index, follow" />
       <meta name="language" content={locale === 'bn' ? 'Bengali' : 'English'} />
-      <meta name="author" content="medico.ai" />
+      <meta name="author" content="Managemed" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonicalUrl} />
@@ -75,7 +75,7 @@ export default function SEOHead({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "medico.ai",
+            "name": "Managemed",
             "applicationCategory": "MedicalApplication",
             "operatingSystem": "Web, Android, iOS",
             "description": description,
@@ -86,7 +86,7 @@ export default function SEOHead({
             },
             "author": {
               "@type": "Organization",
-              "name": "medico.ai",
+              "name": "Managemed",
               "url": siteUrl
             },
             "inLanguage": locale === 'bn' ? "bn-BD" : "en-US"

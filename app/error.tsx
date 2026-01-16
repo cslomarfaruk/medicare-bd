@@ -106,13 +106,13 @@ export default function Error({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href="mailto:support@medico.ai.app" 
+              href="mailto:support@Managemed.app" 
               className="group inline-flex items-center text-green-600 hover:text-blue-700 font-semibold transition-colors"
             >
               <span className="inline-block p-2 rounded-lg bg-blue-50 group-hover:bg-blue-100 mr-3 transition-colors">
                 ✉️
               </span>
-              support@medico.ai.app
+              support@Managemed.app
             </a>
             <div className="h-4 w-px bg-slate-200 hidden sm:block"></div>
             <a 

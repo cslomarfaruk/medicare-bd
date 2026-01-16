@@ -18,31 +18,34 @@ const notoSansBengali = Noto_Sans_Bengali({
 
 // Base metadata for the application. Page-level files can override/extend this.
 export const metadata: Metadata = {
-  title: 'medico.ai - AI-Powered Healthcare Management Platform',
+  title: 'Managemed - AI-Powered Healthcare Management Platform',
   description:
     "Bangladesh's first AI-powered clinic management software. Complete digital transformation for medical practices with patient management, billing, inventory, and AI analytics.",
   keywords:
     'clinic software, hospital management, medical software Bangladesh, EHR, EMR, healthcare management, medical billing',
-  authors: [{ name: 'medico.ai' }],
+  authors: [{ name: 'Managemed' }],
   openGraph: {
-    title: 'medico.ai - Revolutionizing Healthcare in Bangladesh',
+    title: 'Managemed - Revolutionizing Healthcare in Bangladesh',
     description: 'Complete digital transformation for medical practices with AI-powered tools.',
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'bn_BD',
-    url: 'https://medico.ai.com',
+    url: 'https://managemed.vercel.app',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'medico.ai - AI-Powered Healthcare Platform',
+    title: 'Managemed - AI-Powered Healthcare Platform',
     description: 'Transform your medical practice with AI-powered management tools',
   },
   alternates: {
-    canonical: 'https://medico.ai.com/',
+    canonical: 'https://managemed.vercel.app/',
     languages: {
-      en: 'https://medico.ai.com/',
-      bn: 'https://medico.ai.com/bn',
+      en: 'https://managemed.vercel.app/',
+      bn: 'https://managemed.vercel.app/bn',
     },
+  },
+  verification: {
+    google: 'u-no173NtvyP0jiCQjvkY2UNiQWqImCojhcX1dpHnwc', 
   },
 }
 

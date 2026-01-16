@@ -58,7 +58,7 @@ export default function Header() {
               </div>
               <div>
                 <span className="text-xl font-bold text-gray-900">
-                  medico<span className="text-green-600">BD</span>
+                  Managemed<span className="text-green-600">BD</span>
                 </span>
                 <div className="text-xs text-gray-500 -mt-1 font-bengali">
                   For Bangladesh Healthcare

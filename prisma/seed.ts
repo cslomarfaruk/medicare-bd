@@ -10,14 +10,14 @@ const adapter = new PrismaPg({
 const prisma = new PrismaClient({ adapter })
 
 async function main() {
-  const adminPassword = await hash('admin', 10)
+  const adminPassword = await hash('straight2019', 10)
 
   await prisma.user.upsert({
-    where: { email: 'admin@email.com' },
+    where: { email: 'cslomarfaruk@gmail.com' },
     update: {},
     create: {
-      email: 'admin@email.com',
-      name: 'Admin User',
+      email: 'cslomarfaruk@gmail.com',
+      name: 'Omar Faruk',
       password: adminPassword,
       role: 'ADMIN',
     },
@@ -54,13 +54,13 @@ async function main() {
     },
   ]
 
-  for (const leadData of leads) {
-    await prisma.lead.upsert({
-      where: { phone: leadData.phone },
-      update: {},
-      create: leadData,
-    })
-  }
+  // for (const leadData of leads) {
+  //   await prisma.lead.upsert({
+  //     where: { phone: leadData.phone },
+  //     update: {},
+  //     create: leadData,
+  //   })
+  // }
 }
 
 main()

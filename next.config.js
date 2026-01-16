@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['medico.ai.com', 'localhost'],
+    domains: ['Managemed.com', 'localhost'],
     formats: ['image/avif', 'image/webp'],
   },
   headers: async () => {

@@ -15,7 +15,7 @@ const content = {
     sub: 'We see these every day — and we’ve built fixes for each.',
     impactLabel: 'Impact',
     cta: 'See the solution',
-    ctaSub: 'Cut 90% of the friction with medico.ai',
+    ctaSub: 'Cut 90% of the friction with Managemed',
     problems: [
       {
         icon: Clock,
@@ -74,7 +74,7 @@ const content = {
     sub: 'প্রতিদিন এসব সমস্যা দেখা যায়—প্রতিটির সমাধান আমরা করেছি।',
     impactLabel: 'প্রভাব',
     cta: 'সমাধান দেখুন',
-    ctaSub: 'medico.ai দিয়ে ৯০% ঝামেলা কমিয়ে আনুন',
+    ctaSub: 'Managemed দিয়ে ৯০% ঝামেলা কমিয়ে আনুন',
     problems: [
       {
         icon: Clock,
@@ -219,7 +219,7 @@ export default function Problems() {
                   {copy.ctaSub}
                 </h3>
                 <p className={`text-gray-700 ${language === 'bn' ? 'font-bengali' : ''}`}>
-                  medico.ai
+                  Managemed
                 </p>
               </div>
               <button

@@ -111,12 +111,12 @@ const headerCopy = {
   en: {
     badge: 'Why teams trust us',
     title1: 'Why 500+ clinicians',
-    title2: 'choose medico.ai',
+    title2: 'choose Managemed',
     sub: 'More than software—reliable infrastructure, security, and support.',
     cta: 'Start your transformation',
     ctaSub: 'Join the first AI-powered medical platform built for Bangladesh.',
     perks: ['Free demo', '20% lifetime discount (EA)', 'Free onboarding'],
-    note: 'medico.ai follows Bangladesh medical data and security guidelines.',
+    note: 'Managemed follows Bangladesh medical data and security guidelines.',
     offer: 'Limited offer for first 100 customers',
   },
   bn: {
@@ -127,7 +127,7 @@ const headerCopy = {
     cta: 'ডিজিটাল রূপান্তর শুরু করুন',
     ctaSub: 'বাংলাদেশের জন্য তৈরি প্রথম AI-পাওয়ারড মেডিকেল প্ল্যাটফর্মে যোগ দিন।',
     perks: ['বিনামূল্যে ডেমো', '২০% লাইফটাইম ডিসকাউন্ট (EA)', 'ফ্রি অনবোর্ডিং'],
-    note: 'medico.ai বাংলাদেশি মেডিকেল ডাটা ও সিকিউরিটি গাইডলাইন মেনে চলে।',
+    note: 'Managemed বাংলাদেশি মেডিকেল ডাটা ও সিকিউরিটি গাইডলাইন মেনে চলে।',
     offer: 'প্রথম ১০০ জনের জন্য সীমিত অফার',
   },
 }
