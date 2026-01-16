@@ -1,7 +1,7 @@
 // app/api/tracking/pageview/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import UAParser from "ua-parser-js";
+import {UAParser} from "ua-parser-js";
 
 export async function POST(request: NextRequest) {
   try {
