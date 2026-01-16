@@ -9,7 +9,7 @@ import TrustSignals from '@/components/sections/trust-signals'
 import EarlyAccessForm from '@/components/forms/early-access-form'
 
 export const metadata = {
-  title: 'MediCareBD - AI-Powered Healthcare Management Platform',
+  title: 'medico.ai - AI-Powered Healthcare Management Platform',
   description: 'Bangladesh\'s first AI-powered clinic management software.',
 }
 

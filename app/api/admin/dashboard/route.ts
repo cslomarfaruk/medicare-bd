@@ -1,31 +1,80 @@
-// app/api/admin/dashboard/route.ts
 import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 
 export async function GET(req: Request) {
   try {
-    // In a real app, you'd fetch this from your database
+    // 1. Get Total Leads
     const totalLeads = await db.lead.count()
-    const convertedLeads = await db.lead.count({ where: { status: 'CONVERTED' } })
+
+    // 2. Get Role Distribution (Real Data for the Bar Chart)
+    // Group by 'role' to see if you are getting Doctors or Clinic Owners
+    const roleGroups = await db.lead.groupBy({
+      by: ['role'],
+      _count: {
+        _all: true
+      }
+    })
+
+    // Transform Prisma result into a simple object: { "DOCTOR": 5, "STUDENT": 2 }
+    const roleDistribution = roleGroups.reduce((acc, curr) => {
+      // If role is null, label it 'UNKNOWN'
+      const key = curr.role || 'UNKNOWN' 
+      acc[key] = curr._count._all
+      return acc
+    }, {} as Record<string, number>)
+
+    // 3. Find Top Traffic Source (Real Data for KPI Card)
+    // We check 'utmSource' to see where people are coming from (FB, Google, etc.)
+    const sourceGroups = await db.lead.groupBy({
+      by: ['utmSource'],
+      _count: { _all: true },
+      orderBy: {
+        _count: { utmSource: 'desc' }
+      },
+      take: 1
+    })
+    const topSource = sourceGroups[0]?.utmSource || 'Direct'
+
+    // 4. Calculate Mobile Usage (Real Data for KPI Card)
+    // We count leads where the user agent or screen size suggests a mobile device
+    const mobileCount = await db.lead.count({
+      where: {
+        OR: [
+          { screenSize: { contains: 'mobile' } }, // If your frontend sends "mobile" in screen size
+          { userAgent: { contains: 'Mobile' } },
+          { userAgent: { contains: 'Android' } },
+          { userAgent: { contains: 'iPhone' } }
+        ]
+      }
+    })
     
-    // Dummy data for now
-    const totalRevenue = 123456
-    const activeCampaigns = 3
+    const mobilePercentage = totalLeads > 0 
+      ? Math.round((mobileCount / totalLeads) * 100) 
+      : 0
 
-    const conversionRate = totalLeads > 0 ? (convertedLeads / totalLeads) * 100 : 0
-
+    // 5. Get Recent Leads (The "God Mode" Data)
+    // We fetch EVERYTHING (no select clause) so your modal can show IP, Headers, Metadata etc.
     const recentLeads = await db.lead.findMany({
-      take: 5,
+      take: 10, // Increased to 10 rows
       orderBy: { createdAt: 'desc' },
     })
 
+    // 6. Calculate Top Role (for the KPI Card)
+    // Sort the distribution we calculated in step 2 to find the winner
+    const topRoleEntry = Object.entries(roleDistribution)
+      .sort(([, a], [, b]) => b - a)[0]
+    const topRole = topRoleEntry ? topRoleEntry[0] : 'N/A'
+
+    // Return the exact shape your new Dashboard expects
     return NextResponse.json({
       totalLeads,
-      conversionRate: conversionRate.toFixed(1),
-      totalRevenue,
-      activeCampaigns,
+      roleDistribution,
+      topSource,
+      mobilePercentage,
       recentLeads,
+      topRole
     })
+
   } catch (error) {
     console.error('Admin dashboard error:', error)
     return NextResponse.json(

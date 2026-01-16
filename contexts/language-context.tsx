@@ -95,7 +95,7 @@ export function LanguageProvider({
   const setLanguage = (newLang: Language) => {
     setLanguageState(newLang)
     setDictionary(uiDictionaries[newLang])
-    localStorage.setItem('medicare_language', newLang)
+    localStorage.setItem('medico_language', newLang)
     document.cookie = `preferred_language=${newLang}; path=/; max-age=31536000`
 
     // Navigate to language-specific page

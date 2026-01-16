@@ -263,11 +263,11 @@ export default function AISection() {
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-200">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-green-600">৯৫%</div>
+                      <div className="text-3xl font-bold text-green-600">95%</div>
                       <div className={`text-sm text-gray-600 ${language === 'bn' ? 'font-bengali' : ''}`}>{copy.accuracy}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-emerald-600">৭০%</div>
+                      <div className="text-3xl font-bold text-emerald-600">70%</div>
                       <div className={`text-sm text-gray-600 ${language === 'bn' ? 'font-bengali' : ''}`}>{copy.timeSave}</div>
                     </div>
                   </div>

@@ -73,7 +73,7 @@ export async function submitLeadForm(formData: FormData) {
     if (existingLead) {
       return {
         success: false,
-        message: 'এই ফোন বা ইমেইল দিয়ে ইতিমধ্যে আবেদন করা হয়েছে',
+        message: 'This lead already exists in our system.',
       }
     }
 
@@ -104,7 +104,7 @@ export async function submitLeadForm(formData: FormData) {
     return {
       success: true,
       data: lead,
-      message: 'আপনার আবেদনটি সফলভাবে জমা হয়েছে! শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।',
+      message: 'Your lead has been submitted successfully. Thank you!',
     }
   } catch (error) {
     console.error('Lead submission error:', error)
@@ -115,13 +115,13 @@ export async function submitLeadForm(formData: FormData) {
           field: err.path.join('.'),
           message: err.message,
         })),
-        message: 'আপনার ইনপুটে সমস্যা আছে',
+        message: 'Your submission contains invalid data. Please check and try again.',
       }
     }
 
     return {
       success: false,
-      message: 'সার্ভারে সমস্যা হয়েছে, পরে আবার চেষ্টা করুন',
+      message: 'Server error occurred while submitting your lead. Please try again later.',
     }
   }
 }

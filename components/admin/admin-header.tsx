@@ -30,7 +30,7 @@ export default function AdminHeader({ onMenuClick, onLogout }: AdminHeaderProps)
   // Dummy user data
   const user = {
     name: 'Admin User',
-    email: 'admin@medicarebd.app',
+    email: 'admin@medico.ai.app',
     avatar: '/user-avatar.png', // Replace with actual path or a placeholder component
   }
 

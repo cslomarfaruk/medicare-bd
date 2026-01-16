@@ -79,7 +79,7 @@ export default function AdminLoginPage() {
             <Shield className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">
-            MediCare<span className="text-cyan-400">BD</span>
+            medico<span className="text-cyan-400">BD</span>
             <span className="text-sm text-gray-400 block mt-1">Admin Portal</span>
           </h1>
           <p className="text-gray-400">

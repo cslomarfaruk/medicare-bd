@@ -10,7 +10,7 @@ import { ChevronDown, HelpCircle, Shield, CreditCard, Cloud, Smartphone } from '
 const faqs = {
   en: [
     {
-      question: 'How does MediCareBD help my clinic?',
+      question: 'How does medico.ai help my clinic?',
       answer: 'We digitize every operation—registration to billing—saving 2–3 hours/day, cutting errors by 90%, and improving patient satisfaction.',
       category: 'General',
       icon: HelpCircle,
@@ -53,14 +53,14 @@ const faqs = {
     },
     {
       question: 'Do you migrate existing data?',
-      answer: 'Yes. We migrate from Excel/other tools into MediCareBD—free of charge.',
+      answer: 'Yes. We migrate from Excel/other tools into medico.ai—free of charge.',
       category: 'Migration',
       icon: Cloud,
     },
   ],
   bn: [
     {
-      question: 'MediCareBD কীভাবে আমার ক্লিনিকের সাহায্য করবে?',
+      question: 'medico.ai কীভাবে আমার ক্লিনিকের সাহায্য করবে?',
       answer: 'রেজিস্ট্রেশন থেকে বিলিং—সব ডিজিটাল; প্রতিদিন ২-৩ ঘণ্টা সাশ্রয়, ভুল কমে ৯০%, রোগী সন্তুষ্টি বাড়ে।',
       category: 'সাধারণ',
       icon: HelpCircle,
@@ -103,7 +103,7 @@ const faqs = {
     },
     {
       question: 'ডেটা মাইগ্রেশন আছে?',
-      answer: 'হ্যাঁ, এক্সেল/অন্যান্য টুল থেকে MediCareBD-তে ফ্রি মাইগ্রেশন।',
+      answer: 'হ্যাঁ, এক্সেল/অন্যান্য টুল থেকে medico.ai-তে ফ্রি মাইগ্রেশন।',
       category: 'মাইগ্রেশন',
       icon: Cloud,
     },
@@ -311,7 +311,7 @@ export default function FAQ() {
                   <span className={language === 'bn' ? 'font-bengali' : ''}>{copy.call}</span>
                 </button>
                 <button
-                  onClick={() => window.open('mailto:support@medicarebd.app', '_blank')}
+                  onClick={() => window.open('mailto:support@medico.ai.app', '_blank')}
                   className="px-6 py-3 bg-gradient-to-r from-green-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl"
                 >
                   <span className={language === 'bn' ? 'font-bengali' : ''}>{copy.email}</span>

@@ -124,7 +124,7 @@ export default function Loading() {
                   backgroundSize: '200% auto'
                 }}
               >
-                MediCare<span className="text-cyan-400">BD</span>
+                medico<span className="text-cyan-400">BD</span>
               </motion.h2>
               
               <motion.p 

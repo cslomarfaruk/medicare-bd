@@ -63,7 +63,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-2xl">MB</span>
               </div>
               <div>
-                <h2 className="text-2xl font-bold">MediCare<span className="text-cyan-400">BD</span></h2>
+                <h2 className="text-2xl font-bold">medico<span className="text-cyan-400">BD</span></h2>
                 <p className="text-gray-400 text-sm font-bengali">
                   বাংলাদেশের চিকিৎসকদের জন্য
                 </p>
@@ -82,7 +82,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="w-4 h-4 mr-3" />
-                <span>support@medicarebd.app</span>
+                <span>support@medico.ai.app</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-4 h-4 mr-3" />
@@ -118,7 +118,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <p className="text-gray-400 text-sm font-bengali">
-              © {currentYear} MediCareBD. সর্বস্বত্ব সংরক্ষিত। 
+              © {currentYear} medico.ai. সর্বস্বত্ব সংরক্ষিত। 
               <span className="ml-2">Made with <Heart className="inline w-4 h-4 text-rose-500" /> in Bangladesh</span>
             </p>
             <div className="flex space-x-4 mt-3 text-sm text-gray-400 font-bengali">
