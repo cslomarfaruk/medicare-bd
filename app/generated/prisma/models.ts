@@ -10,4 +10,6 @@
  */
 export type * from './models/User'
 export type * from './models/Lead'
+export type * from './models/PageVisit'
+export type * from './models/Event'
 export type * from './commonInputTypes'

@@ -4,7 +4,7 @@ export const runtime = 'nodejs' // REQUIRED for bcrypt + jsonwebtoken
 
 import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { compare } from 'bcrypt'
+import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import { z } from 'zod'
 

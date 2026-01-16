@@ -58,7 +58,7 @@ const uiDictionaries = {
   },
 } as const
 
-type UIDictionary = (typeof uiDictionaries)['en']
+type UIDictionary = (typeof uiDictionaries)[Language]
 
 interface LanguageContextType {
   language: Language

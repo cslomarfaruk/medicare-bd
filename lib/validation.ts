@@ -86,7 +86,7 @@ export function sanitizeInput(input: string): string {
 }
 
 export function formatValidationErrors(errors: z.ZodError) {
-  return errors.errors.map(error => ({
+  return errors.issues.map(error => ({
     field: error.path.join('.'),
     message: error.message
   }))

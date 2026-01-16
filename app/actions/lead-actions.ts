@@ -8,7 +8,7 @@ import { UAParser } from 'ua-parser-js'
 const leadSchema = z.object({
   name: z.string().min(2),
   email: z.string().email().optional(),
-  phone: z.string().min(11).optional(),
+  phone: z.string().min(11, 'Phone number must be at least 11 characters long').optional(),
   role: z.enum([
     'DOCTOR',
     'CLINIC_OWNER',
@@ -27,9 +27,9 @@ const leadSchema = z.object({
     'LARGE_51_PLUS',
   ]).optional(),
   message: z.string().max(500).optional(),
-  utm_source: z.string().optional(),
-  utm_medium: z.string().optional(),
-  utm_campaign: z.string().optional(),
+  utmSource: z.string().optional(),
+  utmMedium: z.string().optional(),
+  utmCampaign: z.string().optional(),
   sessionId: z.string().optional(),
   landingPage: z.string().optional(),
   screenSize: z.string().optional(),
@@ -54,21 +54,26 @@ export async function submitLeadForm(formData: FormData) {
       organizationSize: formData.get('organizationSize')?.toString(),
       message: formData.get('message')?.toString(),
       landingPage: formData.get('landingPage')?.toString() || '/',
-      utm_source: formData.get('utm_source')?.toString(),
-      utm_medium: formData.get('utm_medium')?.toString(),
-      utm_campaign: formData.get('utm_campaign')?.toString(),
+      utmSource: formData.get('utm_source')?.toString(),
+      utmMedium: formData.get('utm_medium')?.toString(),
+      utmCampaign: formData.get('utm_campaign')?.toString(),
       sessionId: formData.get('sessionId')?.toString(),
       screenSize: formData.get('screenSize')?.toString(),
     }
 
     const validatedData = leadSchema.parse(rawData)
 
+    if (!validatedData.phone) {
+      return {
+        success: false,
+        message: 'Phone number is required.',
+      }
+    }
+
     // Check if phone or email already exists
     const existingLead = validatedData.email
       ? await db.lead.findFirst({ where: { email: validatedData.email } })
-      : validatedData.phone
-      ? await db.lead.findUnique({ where: { phone: validatedData.phone } })
-      : null
+      : await db.lead.findUnique({ where: { phone: validatedData.phone } })
 
     if (existingLead) {
       return {
@@ -80,6 +85,7 @@ export async function submitLeadForm(formData: FormData) {
     const lead = await db.lead.create({
       data: {
         ...validatedData,
+        phone: validatedData.phone,
         ipAddress,
         userAgent,
         referrer,
@@ -111,7 +117,7 @@ export async function submitLeadForm(formData: FormData) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        errors: error.errors.map(err => ({
+        errors: error.issues.map(err => ({
           field: err.path.join('.'),
           message: err.message,
         })),

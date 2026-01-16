@@ -28,9 +28,9 @@ const MotionDiv = dynamic(
 
 
 const formSchema = z.object({
-  name: z.string().min(2, 'নাম কমপক্ষে ২ অক্ষরের হতে হবে'),
-  email: z.string().email('সঠিক ইমেইল দিন').optional(),
-  phone: z.string().min(11, 'সঠিক মোবাইল নম্বর দিন').optional(),
+  name: z.string().min(2, 'Name must be at least 2 characters long'),
+  email: z.string().email('Email address is invalid').optional(),
+  phone: z.string().min(11, 'Phone number must be at least 11 digits').optional(),
   role: z.enum([
     'DOCTOR',
     'CLINIC_OWNER',

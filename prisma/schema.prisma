@@ -42,6 +42,30 @@ model Lead {
   updatedAt        DateTime @updatedAt
 }
 
+model PageVisit {
+  id         Int      @id @default(autoincrement())
+  sessionId  String?
+  page       String
+  referrer   String?
+  userAgent  String?
+  deviceType String?
+  browser    String?
+  os         String?
+  screenSize String?
+  country    String?
+  city       String?
+  createdAt  DateTime @default(now())
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  type      String
+  page      String?
+  sessionId String?
+  data      Json?
+  createdAt DateTime @default(now())
+}
+
 enum Role {
   USER
   ADMIN

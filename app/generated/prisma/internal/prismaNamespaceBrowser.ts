@@ -52,7 +52,9 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  Lead: 'Lead'
+  Lead: 'Lead',
+  PageVisit: 'PageVisit',
+  Event: 'Event'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -110,6 +112,36 @@ export const LeadScalarFieldEnum = {
 } as const
 
 export type LeadScalarFieldEnum = (typeof LeadScalarFieldEnum)[keyof typeof LeadScalarFieldEnum]
+
+
+export const PageVisitScalarFieldEnum = {
+  id: 'id',
+  sessionId: 'sessionId',
+  page: 'page',
+  referrer: 'referrer',
+  userAgent: 'userAgent',
+  deviceType: 'deviceType',
+  browser: 'browser',
+  os: 'os',
+  screenSize: 'screenSize',
+  country: 'country',
+  city: 'city',
+  createdAt: 'createdAt'
+} as const
+
+export type PageVisitScalarFieldEnum = (typeof PageVisitScalarFieldEnum)[keyof typeof PageVisitScalarFieldEnum]
+
+
+export const EventScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  page: 'page',
+  sessionId: 'sessionId',
+  data: 'data',
+  createdAt: 'createdAt'
+} as const
+
+export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
 
 
 export const SortOrder = {

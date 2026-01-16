@@ -27,3 +27,13 @@ export type User = Prisma.UserModel
  * 
  */
 export type Lead = Prisma.LeadModel
+/**
+ * Model PageVisit
+ * 
+ */
+export type PageVisit = Prisma.PageVisitModel
+/**
+ * Model Event
+ * 
+ */
+export type Event = Prisma.EventModel

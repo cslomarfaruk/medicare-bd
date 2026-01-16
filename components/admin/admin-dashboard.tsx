@@ -758,14 +758,17 @@ function DetailField({ label, value, type = 'text', badge = false, truncate = fa
   )
 }
 
-function DetailCard({ label, value, color = 'gray' }: any) {
-  const colorClasses = {
+const colorClasses = {
     blue: 'bg-blue-50 border-blue-100',
     purple: 'bg-purple-50 border-purple-100',
     orange: 'bg-orange-50 border-orange-100',
     green: 'bg-green-50 border-green-100',
     gray: 'bg-gray-50 border-gray-100'
-  }
+} as const
+
+type DetailCardColor = keyof typeof colorClasses
+
+function DetailCard({ label, value, color = 'gray' }: { label: string; value?: string | null; color?: DetailCardColor }) {
 
   return (
     <div className={`p-3 rounded-lg border ${colorClasses[color]}`}>

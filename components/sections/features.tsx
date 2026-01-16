@@ -19,6 +19,23 @@ import {
   Zap
 } from 'lucide-react'
 
+type FeatureItem = {
+  icon: typeof Users
+  title: string
+  description: string
+  benefits: string[]
+}
+
+type FeaturesCopy = {
+  badge: string
+  titleTop: string
+  titleBottom: string
+  sub: string
+  categories: Record<string, FeatureItem[]>
+  stats: { value: string; label: string; color: string }[]
+  learnMore: string
+}
+
 const data = {
   en: {
     badge: 'Complete stack',
@@ -174,7 +191,7 @@ const data = {
 
 export default function Features() {
   const { language } = useLanguage()
-  const copy = language === 'bn' ? data.bn : data.en
+  const copy: FeaturesCopy = language === 'bn' ? data.bn : data.en
 
   const categoriesKeys = useMemo(() => Object.keys(copy.categories), [copy])
   const [activeCategory, setActiveCategory] = useState<string>(categoriesKeys[0])
